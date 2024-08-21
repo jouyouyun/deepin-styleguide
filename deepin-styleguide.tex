@@ -1,11 +1,11 @@
-\documentclass[UTF8,a4paper,oneside]{ctexbook}
+\documentclass{utbook}
 
 \usepackage{indentfirst}
 \setlength{\parindent}{2em}
 
 \usepackage[margin=1in]{geometry}
 
-\input{utils.tex}
+%% \input{utils.tex}
 
 % 设置段落间距
 \setlength{\parskip}{0.5em}
@@ -13,13 +13,23 @@
 \@addtoreset{chapter}{part}
 \makeatother
 
-\title{\deepin 开源项目风格指南}
-\date{\today}
-\author{\deepin}
+\title{编码规范}
+\date{2024-05-10}
+\author{统信软件技术有限公司}
 
 \begin{document}
 
 \maketitle
+
+% 生成修订记录
+\utMakeChangeLog{%
+    1.0.0 &      创建   &    李鹤   &   2021-11-25      \\
+    \hline
+    1.1.0 &      添加Golang编码规范   &    闫博文   &   2022-01-11      \\
+    \hline
+    1.2.0 &      添加C编码规范   &    张继德   &   2024-05-10      \\
+    \hline
+}
 
 \textbf{声明}
 
@@ -47,7 +57,9 @@
 
 \end{DNote}
 
-\tableofcontents
+%% \tableofcontents
+\newpage
+\utMakeTOC
 \newpage
 
 \input{deepin/index.tex}
