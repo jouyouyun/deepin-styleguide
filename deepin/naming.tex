@@ -94,16 +94,31 @@ DDE 是 \iniinline{Deepin Desktop Environment} 的缩写。
 
 \textbf{总述}
 
-\deepin 项目应该使用全小写的命名方式，单词使用\cppinline{-}进行连接。但是如果是应用型的项目，也可以使用倒置域名进行命名。
+\deepin 项目应该使用全小写的命名方式，单词使用\cppinline{-}进行连接(\cppinline{-}不应该超过2个)。项目的前缀应该遵循下述规则：
+
+\begin{itemize}
+  \item 开源项目应以\cppinline{deepin-}作为名称前缀，其中\texttt{DDE}组件应以\cppinline{dde-}作为名称前缀。
+  \item 闭源项目应以\cppinline{uos-}作为名称前缀。
+\end{itemize}
+
+但是如果是应用型的项目，也可以使用倒置域名进行命名。
 
 \textbf{使用}
 
 \begin{cppcode}
-  org.deepin.lianliankan // 倒置域名格式，应用必须使用该方式命名
-  plymouth-theme-deepin  // 正确
-  deepin-font-manager    // 正确
+  org.deepin.lianliankan     // 倒置域名格式，应用必须使用该方式命名
+  plymouth-theme-deepin      // 正确
+  deepin-font-manager        // 正确
 
-  Robot-Autotest         // 错误，不使用大写
+  dtk                        // 错误
+  deepin-development-toolkit // 正确
+
+  usecd                      // 错误
+  uos-security-daemon        // 正确
+
+  device_inspurcloud         // 错误
+
+  Robot-Autotest             // 错误，不使用大写
 \end{cppcode}
 
 \section{文件命名} \label{deepin-file-naming}
